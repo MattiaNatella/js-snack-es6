@@ -13,25 +13,42 @@ Stampare a schermo la bici con peso minore.
 
 const biciclette = [
   {
-    nome = 'Air Force 1',
-    peso = '15kg',
-  }
+    nome:'Air Force 1',
+    peso:'15kg',
+  },
   {
-    nome = 'Air Force Strike 2',
-    peso = '20kg',
-  }
+    nome:'Air Force Strike 2',
+    peso:'20kg',
+  },
   {
-    nome = 'Mountain Climber',
-    peso = '5kg',
-  }
+    nome:'Mountain Climber',
+    peso:'5kg',
+  },
   {
-    nome = 'Mountain Destroyer',
-    peso = '3kg',
-  }
+    nome:'Mountain Destroyer',
+    peso:'3kg',
+  },
   {
-    nome = 'F500-PTR2',
-    peso = '30kg',
+    nome:'F500-PTR2',
+    peso:'30kg',
   }
 ]
+ 
+console.log(biciclette);
+
+let biciPiuLeggera = biciclette[0]
+
+console.log(biciPiuLeggera);
+
+for(let key in biciclette){
+  const bici = biciclette[key]
+  if(biciPiuLeggera.peso > biciclette[key].peso) {
+    biciPiuLeggera = biciclette[key]
+  }
+  console.log(bici)
+
+  document.getElementById('print').innerHTML = `La bicicletta ${biciPiuLeggera.nome} è la più leggera! con un peso di ${biciPiuLeggera.peso}`
   
+
+
 }
