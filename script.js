@@ -26,7 +26,7 @@ const biciclette = [
   },
   {
     nome:'Mountain Destroyer',
-    peso:'3kg',
+    peso:'1kg',
   },
   {
     nome:'F500-PTR2',
@@ -34,6 +34,15 @@ const biciclette = [
   }
 ]
  
+let lista = ''
+
+for(let key in biciclette){
+  const bici = biciclette[key]
+  lista += `<li>${bici}</li>`
+}
+
+document.getElementById('lista').innerHTML = lista
+
 console.log(biciclette);
 
 let biciPiuLeggera = biciclette[0]
@@ -42,9 +51,10 @@ console.log(biciPiuLeggera);
 
 for(let key in biciclette){
   const bici = biciclette[key]
-  if(biciPiuLeggera.peso > biciclette[key].peso) {
-    biciPiuLeggera = biciclette[key]
-  }
+  
+  if(parseInt(biciPiuLeggera.peso) > parseInt(bici.peso)) {
+    biciPiuLeggera = bici
+    }
   console.log(bici)
 
   document.getElementById('print').innerHTML = `La bicicletta ${biciPiuLeggera.nome} è la più leggera! con un peso di ${biciPiuLeggera.peso}`
