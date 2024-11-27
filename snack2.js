@@ -37,6 +37,31 @@ for(let i in squadre) {
 console.log(squadre)
 console.log(nomiEFalli)
 
+//5. stampo i nuovi array in liste nel DOM
+
+const listaSquadre = document.getElementById('lista-squadre')
+const listaFalli = document.getElementById('lista-falli')
+
+//lista completa
+for (let i in squadre) {
+
+  const li = document.createElement('li');
+  li.innerText = `Nome: ${squadre[i].nome}, punti Fatti: ${squadre[i].puntiFatti}, Falli Subiti:${squadre[i].falliSubiti}`
+  
+  listaSquadre.append(li)
+}
+
+//lista nome squadre e falli
+for (let i = 0; i < nomiEFalli.length; i++) {
+  if(isNaN(nomiEFalli[i])){
+    const li = document.createElement('li')
+    li.innerText = `Nome: ${nomiEFalli[i]}, Falli Subiti:${nomiEFalli[i + 1]}`
+    
+    listaFalli.append(li)
+  }
+}
+
+
 
 //3. FUNCTIONS
 
