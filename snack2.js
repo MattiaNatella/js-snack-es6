@@ -30,9 +30,12 @@ let nomiEFalli = []
 for(let i in squadre) {
   squadre[i].puntiFatti = getRandomNumber(0,30)
   squadre[i].falliSubiti = getRandomNumber(0,30)
-  console.log(squadre[i].puntiFatti, squadre[i].falliSubiti);
-  
+  nomiEFalli.push(squadre[i].nome,squadre[i].falliSubiti)
+
 }
+//4. stampo il nuovo array in console
+console.log(squadre)
+console.log(nomiEFalli)
 
 
 //3. FUNCTIONS
