@@ -1,0 +1,42 @@
+/*
+**Snack2**
+Creare un array di oggetti di squadre di calcio.
+ Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
+Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console
+
+
+**PSEUDO-CODICE**
+1. dichiaro un'array di oggetti -- OK
+2. popolo l'array di oggetti con le proprietà nome, punti fatti, falli subiti -- OK
+3. inserisco un ciclo che iteri tutte le proprietà dell'array di oggetti, ad ogni ciclo genero randomicamente il valore delle chiavi punti fatti e falli subiti, e pusho in un nuovo array le proprietà nome e falli subiti 
+4. stampo il nuovo array in console
+*/
+
+//1.-2. DICHIARO E ASSEGNO ARRAY DI OGGETTI
+const squadre = [
+  { nome:'Ajax', puntiFatti:0, falliSubiti: 0},
+  { nome:'Juventus', puntiFatti:0, falliSubiti: 0},
+  { nome:'Pontedera', puntiFatti:0, falliSubiti: 0},
+  { nome:'Salernitana', puntiFatti:0, falliSubiti: 0},
+  { nome:'Pisa', puntiFatti:0, falliSubiti: 0,}
+]
+
+//3. inserisco un ciclo che iteri tutte le proprietà dell'array di oggetti, ad ogni ciclo genero randomicamente il valore delle chiavi punti fatti e falli subiti, e pusho in un nuovo array le proprietà nome e falli subiti 
+
+let nomiEFalli = []
+
+for(let i in squadre) {
+  squadre[i].puntiFatti = getRandomNumber(0,30)
+  squadre[i].falliSubiti = getRandomNumber(0,30)
+  console.log(squadre[i].puntiFatti, squadre[i].falliSubiti);
+  
+}
+
+
+//3. FUNCTIONS
+
+function getRandomNumber(min,max) {
+  return Math.floor(Math.random() * (max - min +1) + min)
+  }
