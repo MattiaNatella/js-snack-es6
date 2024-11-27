@@ -12,39 +12,25 @@ Stampare a schermo la bici con peso minore.
 */
 
 const biciclette = [
-  {
-    nome:'Air Force 1',
-    peso:'15kg',
-  },
-  {
-    nome:'Air Force Strike 2',
-    peso:'20kg',
-  },
-  {
-    nome:'Mountain Climber',
-    peso:'5kg',
-  },
-  {
-    nome:'Mountain Destroyer',
-    peso:'1kg',
-  },
-  {
-    nome:'F500-PTR2',
-    peso:'30kg',
-  }
+  { nome:'Air Force 1', peso:'15kg'},
+  { nome:'Air Force Strike 2', peso:'20kg'},
+  { nome:'Mountain Climber', peso:'5kg'},
+  { nome:'Mountain Destroyer', peso:'1kg'},
+  { nome:'F500-PTR2', peso:'30kg'}
 ]
- 
-let lista = ''
 
-for(let key in biciclette){
-  const bici = biciclette[key]
-  lista += `<li>${bici}</li>`
+const lista = document.getElementById('lista')
+
+for (let i in biciclette) {
+  const li = document.createElement('li');
+  li.innerText = `Nome: ${biciclette[i].nome}, Peso: ${biciclette[i].peso}`
+  lista.append(li)
 }
 
-document.getElementById('lista').innerHTML = lista
 
-console.log(biciclette);
 
+
+//SNACK
 let biciPiuLeggera = biciclette[0]
 
 console.log(biciPiuLeggera);
@@ -55,8 +41,6 @@ for(let key in biciclette){
   if(parseInt(biciPiuLeggera.peso) > parseInt(bici.peso)) {
     biciPiuLeggera = bici
     }
-  console.log(bici)
-
   document.getElementById('print').innerHTML = `La bicicletta ${biciPiuLeggera.nome} è la più leggera! con un peso di ${biciPiuLeggera.peso}`
   
 
