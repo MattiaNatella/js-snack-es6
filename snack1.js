@@ -22,13 +22,13 @@ const biciclette = [
 const lista = document.getElementById('lista')
 
 for (let i in biciclette) {
+  //creo l'elemento (il tag) li
   const li = document.createElement('li');
+  // inserisco all'interno del tag le proprietà di biciclette
   li.innerText = `Nome: ${biciclette[i].nome}, Peso: ${biciclette[i].peso}`
+  //aggiungo il l'elemento li che comprende le proprietà dell'array dentro l'elemento lista
   lista.append(li)
 }
-
-
-
 
 //SNACK
 let biciPiuLeggera = biciclette[0]
